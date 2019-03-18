@@ -3,7 +3,6 @@ import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
 
 function PostContainer(props) {
-  console.log(props);
   return (
     <div className="post-container">
       <img src={props.post.thumbnailUrl} />

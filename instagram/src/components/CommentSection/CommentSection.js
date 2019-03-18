@@ -5,8 +5,8 @@ function CommentSection(props) {
   console.log(props);
   return (
     <div>
-      {props.comments.map(comment => (
-        <Comment comment={comment} />
+      {props.comments.map((comment, index) => (
+        <Comment comment={comment} key={index} />
       ))}
       <form>
         <input name="addPost" placeholder="Add a comment"/>

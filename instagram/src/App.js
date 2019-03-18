@@ -11,8 +11,8 @@ class App extends Component {
       <div className="App">
         <SearchBar />
         <h1>Hoody Hoo</h1>
-        {dummyData.map(post => (
-          <PostContainer post={post} />
+        {dummyData.map((post, index) => (
+          <PostContainer post={post} key={index} />
         ))}
       </div>
     );
