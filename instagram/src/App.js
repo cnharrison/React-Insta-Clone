@@ -18,9 +18,9 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
-        <h1>Hoody Hoo</h1>
+        <h1>Instagram</h1>
         {this.state.posts.map((post, index) => (
-          <PostContainer post={post} key={index} />
+          <PostContainer post={post} key={index} postIndex={index} />
         ))}
       </div>
     );

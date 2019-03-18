@@ -11,7 +11,7 @@ function PostContainer(props) {
       <img src={props.post.imageUrl} />
       <p>{props.post.likes} likes</p>
       <div className="comments-container" />
-      <CommentSection comments={props.post.comments} />
+      <CommentSection comments={props.post.comments} postIndex={props.postIndex} />
     </div>
   );
 }
