@@ -2,19 +2,29 @@ import React, { Component } from "react";
 import Comment from "../Comment/Comment";
 import PropTypes from "prop-types";
 
-function CommentSection(props) {
-  console.log(props);
-  return (
-    <div>
-      {props.comments.map((comment, index) => (
-        <Comment comment={comment} key={index} />
-      ))}
-      <form>
-        <input name="addPost" placeholder="Add a comment" />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
+class CommentSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { comments: [] };
+  }
+
+  componentDidMount() {
+    this.setState({ comments: this.props.comments });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.comments.map((comment, index) => (
+          <Comment comment={comment} key={index} />
+        ))}
+        <form>
+          <input name="addPost" placeholder="Add a comment" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 CommentSection.propTypes = {
