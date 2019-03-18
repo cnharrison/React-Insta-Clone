@@ -6,12 +6,20 @@ import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { posts: [] };
+  }
+
+  componentDidMount() {
+    this.setState({ posts: dummyData });
+  }
   render() {
     return (
       <div className="App">
         <SearchBar />
         <h1>Hoody Hoo</h1>
-        {dummyData.map((post, index) => (
+        {this.state.posts.map((post, index) => (
           <PostContainer post={post} key={index} />
         ))}
       </div>
