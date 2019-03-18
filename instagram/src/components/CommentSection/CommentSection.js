@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Comment from "../Comment/Comment"
+import Comment from "../Comment/Comment";
 
 function CommentSection(props) {
   console.log(props);
@@ -8,6 +8,10 @@ function CommentSection(props) {
       {props.comments.map(comment => (
         <Comment comment={comment} />
       ))}
+      <form>
+        <input name="addPost" placeholder="Add a comment"/>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
