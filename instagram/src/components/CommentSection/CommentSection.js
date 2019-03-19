@@ -16,13 +16,12 @@ class CommentSection extends Component {
     this.setState({ comments: this.props.comments });
   };
 
-  inputChangeHandler = event => {
+  updateHandler = event => {
     this.setState({ comment: event.target.value });
   };
 
   addNewComment = event => {
     event.preventDefault();
-    console.log(event.target);
 
     let newComment = {
       text: this.state.comment,
@@ -49,7 +48,7 @@ class CommentSection extends Component {
             name="addComment"
             placeholder="Add a comment"
             value={this.state.comment}
-            onChange={this.inputChangeHandler}
+            onChange={this.updateHandler}
           />
           <button type="submit">Submit</button>
         </form>
