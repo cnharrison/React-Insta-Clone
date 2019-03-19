@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 class PostContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { likes: 0 };
+    this.state = { likes: this.props.post.likes };
   }
 
-  incrementLikes = () => {};
+  incrementLikes = () => {
+    this.setState({ likes: this.state.likes + 1 })
+  };
 
   render() {
     return (
@@ -18,9 +20,9 @@ class PostContainer extends Component {
         <p>{this.props.post.timestamp}</p>
         <img src={this.props.post.imageUrl} />
         <p>
-          {this.props.post.likes} likes
+          {this.state.likes} likes
           <span className="heart" onClick={this.incrementLikes}>
-            heart
+            [like]
           </span>
         </p>
         <div className="comments-container" />
