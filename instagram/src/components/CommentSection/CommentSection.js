@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 
 class CommentSection extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       comments: [],
