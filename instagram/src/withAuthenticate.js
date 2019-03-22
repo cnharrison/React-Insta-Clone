@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 const withAuthenticate = Component1 => Component2 => {
   return class extends Component {
     constructor(props) {
@@ -8,8 +7,12 @@ const withAuthenticate = Component1 => Component2 => {
     }
 
     render() {
-      const credsExist = localStorage.getItem("password");
-      return <div>{credsExist ? <Component1 /> : <Component2 />}</div>;
+      const credsExist = localStorage.getItem("passWord");
+      return (
+        <div className="ternary">
+          {credsExist === null ? <Component1 /> : <Component2 />}
+        </div>
+      );
     }
   };
 };

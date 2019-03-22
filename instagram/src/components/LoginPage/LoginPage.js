@@ -12,21 +12,23 @@ class LoginPage extends Component {
     };
   }
 
-  loginInputHandler = (event) => {
-    this.setState({ login : event.target.value });
+  loginInputHandler = event => {
+    this.setState({ login: event.target.value });
   };
 
-  passwordInputHandler = (event) => { 
-    this.setState({ password : event.target.value });
-  }
+  passwordInputHandler = event => {
+    this.setState({ password: event.target.value });
+  };
 
   submitHandler = event => {
+    event.preventDefault();
     if (
       this.state.login === this.state.correctLogin &&
-      this.state.pasword === this.state.correctPassword
+      this.state.password === this.state.correctPassword
     ) {
       localStorage.setItem("userName", this.state.login);
       localStorage.setItem("passWord", this.state.password);
+      window.location.reload();
     } else {
       alert("wrong password bro");
     }
