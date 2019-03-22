@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 const withAuthenticate = Component1 => Component2 => {
   return class extends Component {
     constructor(props) {
@@ -7,9 +8,10 @@ const withAuthenticate = Component1 => Component2 => {
     }
 
     render() {
-      return <Component />;
+      const credsExist = localStorage.getItem("password");
+      return <div>{credsExist ? <Component1 /> : <Component2 />}</div>;
     }
   };
 };
-     
+
 export default withAuthenticate;

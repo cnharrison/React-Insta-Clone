@@ -9,7 +9,7 @@ class PostContainer extends Component {
   }
 
   incrementLikes = () => {
-    this.setState({ likes: this.state.likes + 1 })
+    this.setState({ likes: this.state.likes + 1 });
   };
 
   render() {
