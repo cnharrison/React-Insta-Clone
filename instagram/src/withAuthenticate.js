@@ -7,7 +7,7 @@ const withAuthenticate = Component1 => Component2 => {
     }
 
     render() {
-      const credsExist = localStorage.getItem("passWord");
+      const credsExist = localStorage.getItem("password");
       return (
         <div className="ternary">
           {credsExist === null ? <Component1 /> : <Component2 />}

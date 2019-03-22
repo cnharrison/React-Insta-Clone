@@ -11,6 +11,11 @@ class App extends Component {
     super();
   }
 
+componentDidMount() { 
+  localStorage.removeItem("username");
+  localStorage.removeItem("password");
+}
+
   render() {
     return (
       <div className="App">

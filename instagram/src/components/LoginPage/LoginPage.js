@@ -26,8 +26,8 @@ class LoginPage extends Component {
       this.state.login === this.state.correctLogin &&
       this.state.password === this.state.correctPassword
     ) {
-      localStorage.setItem("userName", this.state.login);
-      localStorage.setItem("passWord", this.state.password);
+      localStorage.setItem("username", this.state.login);
+      localStorage.setItem("password", this.state.password);
       window.location.reload();
     } else {
       alert("wrong password bro");
